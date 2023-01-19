@@ -3,9 +3,11 @@ from setuptools.command.build_ext import build_ext
 
 class my_build_ext(build_ext):
     def build_extensions(self):
+        """
         if self.compiler.compiler_type == 'unix':
             for e in self.extensions:
                 e.extra_compile_args = ['-msse4.2', '-mavx2']
+        """
 
         build_ext.build_extensions(self)
 
